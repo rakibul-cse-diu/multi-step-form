@@ -1,12 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
-import { decreaseStep, increaseStep, SaveInfo } from '../../StateManagement/action/formActions';
+import { decreaseStep, increaseStep, resetStep, SaveInfo } from '../../StateManagement/action/formActions';
 
 const StepsControll = ({ data }) => {
     const userInfo = useSelector(state => state.userInfo);
     const step = useSelector(state => state.step);
     console.log(userInfo)
-    console.log(step)
     const dispatch = useDispatch();
 
     const handleNext = () => {
@@ -15,9 +14,17 @@ const StepsControll = ({ data }) => {
             dispatch(increaseStep());
             dispatch(SaveInfo(newData));
         }
+        if (step === 3) {
+            dispatch(increaseStep());
+        }
     }
+
     const handleBack = () => {
         dispatch(decreaseStep());
+    }
+
+    const handleReset = () => {
+        dispatch(resetStep());
     }
     return (
         <div className="container mt-8 flex justify-around">

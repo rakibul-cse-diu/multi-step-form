@@ -1,4 +1,4 @@
-import { DECREASE, INCREASE, SAVE_INFO } from "../constants/formConstants";
+import { DECREASE, INCREASE, RESET, SAVE_INFO } from "../constants/formConstants";
 
 const initialFormState = {
     step: 1,
@@ -17,6 +17,12 @@ const formReducer = (state = initialFormState, action) => {
             return {
                 ...state,
                 step: state.step - 1
+            };
+
+        case RESET:
+            return {
+                ...state,
+                step: 1
             };
 
         case SAVE_INFO:

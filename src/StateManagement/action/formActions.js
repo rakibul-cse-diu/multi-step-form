@@ -1,4 +1,4 @@
-import { DECREASE, INCREASE, SAVE_INFO } from "../constants/formConstants"
+import { DECREASE, INCREASE, RESET, SAVE_INFO } from "../constants/formConstants"
 
 export const increaseStep = () => {
     return {
@@ -8,6 +8,11 @@ export const increaseStep = () => {
 export const decreaseStep = () => {
     return {
         type: DECREASE
+    }
+}
+export const resetStep = () => {
+    return {
+        type: RESET
     }
 }
 export const SaveInfo = (data) => {
