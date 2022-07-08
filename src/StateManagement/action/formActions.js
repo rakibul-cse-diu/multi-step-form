@@ -12,6 +12,7 @@ export const decreaseStep = () => {
 }
 export const SaveInfo = (data) => {
     return {
-        type: SAVE_INFO
+        type: SAVE_INFO,
+        payload: data
     }
 }

@@ -50,7 +50,7 @@ const PersonalInfo = () => {
                         />
                     </div>
                 </div>
-                <StepsControll />
+                <StepsControll data={{ name: "Rakibul" }} />
             </form>
         </div>
     );

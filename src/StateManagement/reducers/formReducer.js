@@ -22,7 +22,7 @@ const formReducer = (state = initialFormState, action) => {
         case SAVE_INFO:
             return {
                 ...state,
-                userInfo: { ...state.userInfo, ...action.payload }
+                userInfo: action.payload
             };
 
         default:
