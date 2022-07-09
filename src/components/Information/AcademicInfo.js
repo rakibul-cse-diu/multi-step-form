@@ -1,7 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import StepsControll from '../Steps/StepsControll';
 
 const AcademicInfo = () => {
+    const [college, setCollege] = useState('');
+    const [degree, setDegree] = useState('');
+    const [major, setMajor] = useState('');
     return (
         <div className="flex flex-col">
             <div className="mx-2 w-full">
@@ -10,6 +14,7 @@ const AcademicInfo = () => {
                 </div>
                 <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
                     <input
+                        onChange={(e) => setCollege(e.target.value)}
                         type="text"
                         autoComplete='off'
                         name="collegename"
@@ -25,6 +30,7 @@ const AcademicInfo = () => {
                 </div>
                 <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
                     <input
+                        onChange={(e) => setDegree(e.target.value)}
                         autoComplete='off'
                         name="degree"
                         placeholder="B.Sc..."
@@ -40,6 +46,7 @@ const AcademicInfo = () => {
                 </div>
                 <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
                     <input
+                        onChange={(e) => setMajor(e.target.value)}
                         autoComplete='off'
                         name="major"
                         placeholder="CSE"
@@ -49,7 +56,7 @@ const AcademicInfo = () => {
                     />
                 </div>
             </div>
-            <StepsControll data={{ name: "Rakibul" }} />
+            <StepsControll data={{ college, degree, major }} />
         </div>
     );
 };
